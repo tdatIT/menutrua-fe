@@ -1,0 +1,5 @@
+dist
+public/mockServiceWorker.js
+src/themes/**/*.generated.*
+src/themes/menutrua/menutrua.*
+bun.lock

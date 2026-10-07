@@ -1,0 +1,94 @@
+/* App-level utilities that Astryx props cannot express. Lives in @layer app,
+ * uses theme tokens only; structural widths are the sole raw px. */
+@layer app {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Orange app tile with the utensils glyph. */
+  .brand-mark {
+    flex-shrink: 0;
+    border-radius: var(--radius-element);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  /* Orange outline CTA ("Thử ngay thôi", "Đăng xuất", "Tìm quán gần đây").
+   * Astryx Button has no outline variant, so we restyle `secondary`. */
+  .button-outline-accent {
+    background: var(--color-background-surface);
+    color: var(--color-text-accent);
+    box-shadow: inset 0 0 0 1.5px var(--color-accent);
+  }
+
+  /* Peach soft panel used behind hero widgets and the auth story. */
+  .soft-panel {
+    border-radius: var(--radius-page);
+    background: var(--color-accent-muted);
+  }
+
+  /* Dark brown footer. */
+  .site-footer {
+    background: var(--color-text-primary);
+    color: var(--color-on-dark);
+  }
+  .site-footer a {
+    color: inherit;
+  }
+
+  /* Rounded image frame with a muted placeholder while loading. */
+  .food-image {
+    overflow: hidden;
+    background: var(--color-background-muted);
+  }
+  .food-image[data-radius='inner'] {
+    border-radius: var(--radius-inner);
+  }
+  .food-image[data-radius='element'] {
+    border-radius: var(--radius-element);
+  }
+  .food-image[data-radius='container'] {
+    border-radius: var(--radius-container);
+  }
+
+  /* Rows that read as individual tiles (dish box, member list). */
+  .media-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+  .media-row {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-container);
+    background: var(--color-background-card);
+    padding: var(--spacing-1);
+  }
+
+  /* Accent ring for highlighted cards (selected roulette item, result). */
+  .accent-ring {
+    box-shadow: 0 0 0 2px var(--color-accent);
+  }
+
+  /* Horizontal scroller that hides the scrollbar but stays swipeable. */
+  .scroll-row {
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+  }
+  .scroll-row::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-row > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

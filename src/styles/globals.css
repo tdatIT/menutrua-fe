@@ -1,0 +1,11 @@
+/* Cascade order is declared explicitly so nothing overrides astryx-base by
+ * accident. See `astryx docs migration` before adding other global CSS. */
+@layer reset, astryx-base, app;
+
+@import '@astryxdesign/core/reset.css';
+@import '@astryxdesign/core/astryx.css';
+
+/* Built from src/themes/menutrua/menutruaTheme.ts via `bun run theme:build`. */
+@import '../themes/menutrua/menutrua.css';
+
+@import './app.css';

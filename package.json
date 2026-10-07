@@ -1,0 +1,59 @@
+{
+  "name": "menutrua-fe",
+  "version": "0.1.0",
+  "description": "MenuTrua — trưa nay ăn gì? SPA chọn món & bình chọn nhóm.",
+  "scripts": {
+    "dev": "vite --mode development",
+    "build": "tsc --noEmit && vite build --mode production",
+    "build:dev": "tsc --noEmit && vite build --mode development",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\"",
+    "theme:build": "astryx theme build src/themes/menutrua/menutruaTheme.ts",
+    "theme:check": "astryx theme build src/themes/menutrua/menutruaTheme.ts --check",
+    "docker:build": "docker build -t menutrua-fe --build-arg APP_ENV=production .",
+    "docker:run": "docker run --rm -p 8080:8080 menutrua-fe"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@astryxdesign/cli": "^0.6.2",
+    "@astryxdesign/core": "^0.6.2",
+    "@hookform/resolvers": "^5.9.1",
+    "@stylexjs/stylex": "^0.19.1",
+    "@tanstack/react-query": "^5.104.1",
+    "axios": "^1.20.0",
+    "lucide-react": "^1.52.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-hook-form": "^7.89.0",
+    "react-router": "^8.4.0",
+    "zod": "^4.6.5",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.104.1",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "msw": "^3.0.2",
+    "oxlint": "^1.87.0",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  },
+  "private": true,
+  "type": "module",
+  "astryx": {
+    "theme": "./src/themes/menutrua/menutruaTheme.ts"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
+  "packageManager": "bun@1.4.2"
+}

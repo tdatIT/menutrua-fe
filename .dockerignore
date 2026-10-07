@@ -1,0 +1,20 @@
+# Keep the build context small and free of local secrets.
+node_modules
+dist
+coverage
+.git
+.gitignore
+.vscode
+.idea
+.claude
+*.log
+*.local
+.env.local
+.env.*.local
+Dockerfile
+docker-compose*.yml
+.dockerignore
+README.md
+AGENTS.md
+skills-lock.json
+menutrua.zip
